@@ -1,6 +1,6 @@
 import React from "react";
-import OrdersContainer from "./organisms/OrdersContainer";
-import ReservationsContainer from "./organisms/ReservationsContainer";
+import OrdersContainer from "./components/organisms/OrdersContainer";
+import ReservationsContainer from "./components/organisms/ReservationsContainer";
 
 function App() {
   return (

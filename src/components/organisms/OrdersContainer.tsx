@@ -11,7 +11,7 @@ function OrdersContainer() {
   return (
     <div className="w-3/4 flex flex-col p-8 space-y-8">
       {/* heading */}
-      <Heading>📝 Orders</Heading>
+      <Heading>Orders</Heading>
       {/* card grid */}
       <div className="grid grid-cols-3 gap-4">
         {/* card */}
