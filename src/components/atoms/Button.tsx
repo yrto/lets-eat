@@ -6,9 +6,8 @@ interface ButtonProps {
   children: React.ReactNode;
 }
 
-const baseStyle = "rounded p-2";
-
 const style = {
+  base: "rounded p-2",
   primary:
     "min-w-full shadow bg-blue-600 text-white active:bg-blue-700 font-bold",
   secondary: "border w-1/4 font-bold active:bg-gray-100",
@@ -16,7 +15,7 @@ const style = {
 
 const Button: React.FC<ButtonProps> = ({ buttonStyle, onClick, children }) => {
   return (
-    <button className={`${baseStyle} ${style[buttonStyle]}`} onClick={onClick}>
+    <button className={`${style.base} ${style[buttonStyle]}`} onClick={onClick}>
       {children}
     </button>
   );

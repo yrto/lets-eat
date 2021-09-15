@@ -1,10 +1,11 @@
-import React from "react";
+import React, { KeyboardEvent } from "react";
 
 interface InputProps {
   wide: boolean;
   placeholder: string;
   value: string;
   onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -12,6 +13,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   value,
   onChange,
+  onKeyDown,
 }) => {
   const isWide = wide ? "min-w-full" : "flex-grow";
   return (
@@ -20,6 +22,7 @@ const Input: React.FC<InputProps> = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      onKeyDown={onKeyDown}
     />
   );
 };

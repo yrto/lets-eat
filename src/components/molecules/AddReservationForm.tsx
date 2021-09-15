@@ -20,6 +20,10 @@ function AddReservationForm() {
     setReservationNameInput(e.currentTarget.value);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") handleAddReservation();
+  };
+
   return (
     <div className="flex flex-col space-y-2">
       <Input
@@ -27,6 +31,7 @@ function AddReservationForm() {
         placeholder="Client's name..."
         value={reservationNameInput}
         onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
       />
       <Button buttonStyle="primary" onClick={handleAddReservation}>
         Add
