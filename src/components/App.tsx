@@ -1,6 +1,25 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../app/store";
+import { addReservation } from "../features/reservationsSlice";
+import ReservationCard from "./ReservationCard";
 
 function App() {
+  //
+  const [reservationNameInput, setReservationNameInput] = useState("");
+
+  const dispatch = useDispatch();
+
+  const handleAddReservation = () => {
+    if (!reservationNameInput) return;
+    dispatch(addReservation(reservationNameInput));
+    setReservationNameInput("");
+  };
+
+  const reservations = useSelector(
+    (state: RootState) => state.reservations.value
+  );
+
   return (
     <div className="container flex m-auto p-16">
       {/* reservations container */}
@@ -11,15 +30,22 @@ function App() {
           <input
             className="rounded border min-w-full p-2 shadow-inner text-center"
             placeholder="Client's name..."
+            value={reservationNameInput}
+            onChange={(e) => setReservationNameInput(e.target.value)}
           />
-          <button className="rounded min-w-full p-2 shadow bg-blue-600 text-white active:bg-blue-700 font-bold">
+          <button
+            className="rounded min-w-full p-2 shadow bg-blue-600 text-white active:bg-blue-700 font-bold"
+            onClick={handleAddReservation}
+          >
             Add
           </button>
         </div>
         {/* reservarion list */}
         <h3 className="text-lg"> Waiting</h3>
         <div className="flex flex-col space-y-4 bg-white">
-          <button className="p-4 rounded shadow font-bold">Laith Harb</button>
+          {reservations.map((name) => (
+            <ReservationCard name={name} />
+          ))}
         </div>
       </div>
       {/* customer food container */}
