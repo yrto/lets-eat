@@ -4,6 +4,13 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 import App from "./App";
 
+// jest.mock("react", () => ({
+//   useState: () => ({
+//     user: { name: "Ayrton", role: "admin" },
+//     setUser: () => null,
+//   }),
+// }));
+
 describe("main component testing", () => {
   it("renders reservations and orders containers", () => {
     render(
