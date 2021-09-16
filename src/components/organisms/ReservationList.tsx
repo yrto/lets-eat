@@ -16,7 +16,7 @@ function ReservationList() {
           <h3 className="text-lg"> Waiting</h3>
           <div className="flex flex-col space-y-4 bg-white">
             {reservations.map((name, index) => (
-              <ReservationCard name={name} index={index} />
+              <ReservationCard name={name} index={index} key={index} />
             ))}
           </div>
         </>
