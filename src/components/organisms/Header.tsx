@@ -9,7 +9,7 @@ function Header() {
   const dispatch = useDispatch();
 
   return (
-    <div className="border-b flex justify-between p-8">
+    <div className="border-b flex justify-between p-8 items-center">
       <Heading>🍕 Let's Eat!</Heading>
       <Button buttonStyle="secondary" onClick={() => dispatch(userLogOut())}>
         Logout

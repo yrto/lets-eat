@@ -13,8 +13,11 @@ function ReservationList() {
     <>
       {reservations.length > 0 && (
         <>
-          <h3 className="text-lg"> Waiting</h3>
-          <div className="flex flex-col space-y-4 bg-white">
+          <h3 className="text-lg">Waiting</h3>
+          <div
+            className="flex flex-col space-y-4 bg-white"
+            data-testid="reservation-list"
+          >
             {reservations.map((name, index) => (
               <ReservationCard name={name} index={index} key={index} />
             ))}

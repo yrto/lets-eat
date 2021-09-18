@@ -24,6 +24,7 @@ function ReservationCard({ name, index }: ReservationCardTypes) {
           })
         );
       }}
+      data-testid="reservation-card"
     >
       {name}
     </button>

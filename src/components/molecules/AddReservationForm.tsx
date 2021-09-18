@@ -25,7 +25,7 @@ function AddReservationForm() {
   };
 
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col space-y-2" data-testid="reservation-form">
       <Input
         wide={true}
         placeholder="Client's name..."

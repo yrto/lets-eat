@@ -71,7 +71,9 @@ function LoginForm() {
         Login
       </Button>
       {userData.failedState && (
-        <p className="text-sm p-6">Wrong e-mail or password!</p>
+        <p className="text-sm p-6" data-testid="failed-login-message">
+          Wrong e-mail or password!
+        </p>
       )}
     </div>
   );

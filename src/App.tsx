@@ -11,13 +11,13 @@ function App() {
   const userData = useSelector((state: RootState) => state.login);
 
   return (
-    <div className="container m-auto p-8">
+    <div className="container m-auto sm:p-8">
       {!userData.loggedIn ? (
         <LoginContainer />
       ) : (
         <>
           <Header />
-          <div className="flex">
+          <div className="flex flex-col lg:flex-row">
             {/* reservations */}
             <ReservationsContainer />
             {/* orders */}

@@ -15,7 +15,11 @@ const style = {
 
 const Button: React.FC<ButtonProps> = ({ buttonStyle, onClick, children }) => {
   return (
-    <button className={`${style.base} ${style[buttonStyle]}`} onClick={onClick}>
+    <button
+      className={`${style.base} ${style[buttonStyle]}`}
+      onClick={onClick}
+      data-testid="button"
+    >
       {children}
     </button>
   );

@@ -26,6 +26,9 @@ export const orderSlice = createSlice({
     addOrder: (state, action: PayloadAction<Order>) => {
       state.value.push(action.payload);
     },
+    removeOrder: (state, action: PayloadAction<number>) => {
+      state.value.splice(action.payload, 1);
+    },
     addFoodToOrder: (state, action: PayloadAction<AddFoodToOrderPayload>) => {
       state.value.forEach((order) => {
         if (order.id === action.payload.id) {
@@ -36,6 +39,6 @@ export const orderSlice = createSlice({
   },
 });
 
-export const { addOrder, addFoodToOrder } = orderSlice.actions;
+export const { addOrder, removeOrder, addFoodToOrder } = orderSlice.actions;
 
 export default orderSlice.reducer;

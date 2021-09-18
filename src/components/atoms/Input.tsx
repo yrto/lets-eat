@@ -19,7 +19,7 @@ const Input: React.FC<InputProps> = ({
   inputType,
   failedState,
 }) => {
-  const isWide = wide ? "min-w-full" : "flex-grow";
+  const isWide = wide ? "min-w-full" : "w-full";
   const isFailed = failedState ? "border-red-400 bg-red-50" : "";
   return (
     <input
@@ -28,7 +28,7 @@ const Input: React.FC<InputProps> = ({
       value={value}
       onChange={onChange}
       onKeyDown={onKeyDown}
-      data-testid="input"
+      data-testid="input-field"
       type={inputType}
     />
   );
